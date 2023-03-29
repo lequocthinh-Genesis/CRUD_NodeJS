@@ -1,0 +1,47 @@
+const Course = require('../models/Course');
+
+const { mutipleMongooseToObject } = require('../../util/mongoose');
+
+
+class MeController {
+
+    // [GET] /me/stored/courses
+
+    storedCourses(req, res, next) {
+        // let courseQuery = Course.find({});
+
+        // res.json(res.locals._sort);
+
+
+
+        // promise
+        // bởi vì nó chạy bất đồng bộ nên phải gom 2 thằng ở dưới thành 1
+        Promise.all([Course.find({}).sortable(req), Course.countDocumentsDeleted()])
+            .then(([courses, deletedCount]) =>
+                res.render('me/stored-courses', {
+                    deletedCount,
+                    courses: mutipleMongooseToObject(courses),
+                })
+            ).catch(next);
+
+        // Course.countDocumentsDeleted().then((deletedCount) => {
+        //     console.log(deletedCount);
+        // }).catch(() => { });
+
+        // Course.find({}).then(courses => res.render('me/stored-courses', {
+        //     courses: mutipleMongooseToObject(courses),
+        // }),).catch(next);
+
+    }
+
+    // [GET] /me/trash/courses
+
+    trashCourses(req, res, next) {
+        Course.findDeleted({}).then(courses => res.render('me/trash-courses', {
+            courses: mutipleMongooseToObject(courses)
+        })).catch(next);
+
+    }
+}
+
+module.exports = new MeController();
