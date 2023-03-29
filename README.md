@@ -24,8 +24,8 @@
 
 ## Chức năng:
 
-- CRUD dữ liệu
-- Sắp sếp dữ liệu tăng/giảm dần
+- CRUD course
+- Sắp sếp course tăng/giảm dần
 - Xóa mềm
 - Khôi phục dữ liệu đã xóa
 
