@@ -30,6 +30,7 @@
 - Xóa mềm
 - Khôi phục dữ liệu đã xóa
 
+
 ## Hướng dẫn sử dụng code:
 
 - Để sử dụng code này máy tính của bạn phải cài đặt NodeJS và các thư viện trong file package.json để có thể chạy code.
