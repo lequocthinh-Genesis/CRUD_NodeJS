@@ -4,7 +4,7 @@
 
 ## Mô tả project:
 
-- Đây là project tôi học về NodeJS và sử dụng các thư viện thường dùng trong NodeJS.
+- Đây là project xây dựng một ứng dụng lưu trữ thông tin của các khóa học.
 
 ## Công nghệ sử dụng:
 
