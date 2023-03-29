@@ -25,6 +25,7 @@
 ## Chức năng:
 
 - CRUD course
+- Xem chi tiết course
 - Sắp sếp course tăng/giảm dần
 - Xóa mềm
 - Khôi phục dữ liệu đã xóa
